@@ -1,0 +1,25 @@
+# Core deep learning
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
+
+# ML utilities
+scikit-learn>=1.2.0
+optuna>=3.0.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+pyarrow>=12.0.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Progress bars
+tqdm>=4.65.0
+
+# Config
+pyyaml>=6.0
+
+# Baseline models (for run_dpi_baselines.py)
+tensorflow>=2.12.0

@@ -1,0 +1,20 @@
+{
+  "model_dir": "D:\\PromptInjectionDetection\\outputs\\model\\ipi_detector_v2",
+  "test_file": "D:\\PromptInjectionDetection\\data\\ipi\\ipi_test_group_source.json",
+  "num_test_samples": 4000,
+  "accuracy": 0.91,
+  "precision": 0.8835,
+  "recall": 0.888,
+  "f1": 0.8858,
+  "confusion_matrix": [
+    [
+      2244,
+      184
+    ],
+    [
+      176,
+      1396
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n           0       0.93      0.92      0.93      2428\n           1       0.88      0.89      0.89      1572\n\n    accuracy                           0.91      4000\n   macro avg       0.91      0.91      0.91      4000\nweighted avg       0.91      0.91      0.91      4000\n"
+}

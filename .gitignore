@@ -1,0 +1,50 @@
+# Trained model checkpoints (large binary files)
+outputs/model/
+outputs/logs/
+
+# System demo outputs (not part of the algorithm research scope)
+outputs/results/system/
+outputs/figures/system/
+
+# Large datasets (not for distribution)
+data/dpi/
+data/ipi/ipi_train.json
+data/ipi/ipi_test.json
+data/ipi/ipi_train_group_source.json
+data/ipi/ipi_test_group_source.json
+data/ipi/synthetic/
+data/ipi/dataset_ipi.csv
+data/dataset.csv
+
+# Thesis document (not for public distribution)
+毕业论文*.docx
+*.docx
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/

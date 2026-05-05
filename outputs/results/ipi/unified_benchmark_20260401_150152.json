@@ -1,0 +1,278 @@
+{
+  "test_file": "D:\\PromptInjectionDetection\\data\\ipi\\ipi_test_group_source.json",
+  "num_samples": 4000,
+  "overall": {
+    "ipi_warning_only": {
+      "precision": 0.4755,
+      "recall": 0.7888,
+      "f1": 0.5933,
+      "accuracy": 0.575,
+      "tp": 1240,
+      "fp": 1368,
+      "tn": 1060,
+      "fn": 332,
+      "support": 4000
+    },
+    "ipi_bert_only": {
+      "precision": 0.8593,
+      "recall": 0.9014,
+      "f1": 0.8799,
+      "accuracy": 0.9032,
+      "tp": 1417,
+      "fp": 232,
+      "tn": 2196,
+      "fn": 155,
+      "support": 4000
+    },
+    "unified": {
+      "precision": 0.4528,
+      "recall": 0.9714,
+      "f1": 0.6177,
+      "accuracy": 0.5275,
+      "tp": 1527,
+      "fp": 1845,
+      "tn": 583,
+      "fn": 45,
+      "support": 4000
+    }
+  },
+  "by_scenario": {
+    "ipi_warning_only": {
+      "conversation": {
+        "precision": 0.6101,
+        "recall": 0.5852,
+        "f1": 0.5974,
+        "accuracy": 0.69,
+        "tp": 230,
+        "fp": 147,
+        "tn": 460,
+        "fn": 163,
+        "support": 1000
+      },
+      "rag_basic": {
+        "precision": 0.4809,
+        "recall": 0.8346,
+        "f1": 0.6102,
+        "accuracy": 0.581,
+        "tp": 328,
+        "fp": 354,
+        "tn": 253,
+        "fn": 65,
+        "support": 1000
+      },
+      "rag_wrapped": {
+        "precision": 0.4344,
+        "recall": 0.8677,
+        "f1": 0.5789,
+        "accuracy": 0.504,
+        "tp": 341,
+        "fp": 444,
+        "tn": 163,
+        "fn": 52,
+        "support": 1000
+      },
+      "structured_source_html": {
+        "precision": 0.4523,
+        "recall": 0.8411,
+        "f1": 0.5882,
+        "accuracy": 0.5172,
+        "tp": 90,
+        "fp": 109,
+        "tn": 45,
+        "fn": 17,
+        "support": 261
+      },
+      "structured_source_json": {
+        "precision": 0.44,
+        "recall": 0.8105,
+        "f1": 0.5704,
+        "accuracy": 0.5146,
+        "tp": 77,
+        "fp": 98,
+        "tn": 46,
+        "fn": 18,
+        "support": 239
+      },
+      "structured_source_markdown": {
+        "precision": 0.3958,
+        "recall": 0.9268,
+        "f1": 0.5547,
+        "accuracy": 0.4938,
+        "tp": 76,
+        "fp": 116,
+        "tn": 43,
+        "fn": 6,
+        "support": 241
+      },
+      "structured_source_ocr": {
+        "precision": 0.4949,
+        "recall": 0.8991,
+        "f1": 0.6384,
+        "accuracy": 0.5714,
+        "tp": 98,
+        "fp": 100,
+        "tn": 50,
+        "fn": 11,
+        "support": 259
+      }
+    },
+    "ipi_bert_only": {
+      "conversation": {
+        "precision": 0.8585,
+        "recall": 0.9109,
+        "f1": 0.884,
+        "accuracy": 0.906,
+        "tp": 358,
+        "fp": 59,
+        "tn": 548,
+        "fn": 35,
+        "support": 1000
+      },
+      "rag_basic": {
+        "precision": 0.8456,
+        "recall": 0.9059,
+        "f1": 0.8747,
+        "accuracy": 0.898,
+        "tp": 356,
+        "fp": 65,
+        "tn": 542,
+        "fn": 37,
+        "support": 1000
+      },
+      "rag_wrapped": {
+        "precision": 0.8631,
+        "recall": 0.8982,
+        "f1": 0.8803,
+        "accuracy": 0.904,
+        "tp": 353,
+        "fp": 56,
+        "tn": 551,
+        "fn": 40,
+        "support": 1000
+      },
+      "structured_source_html": {
+        "precision": 0.8772,
+        "recall": 0.9346,
+        "f1": 0.905,
+        "accuracy": 0.9195,
+        "tp": 100,
+        "fp": 14,
+        "tn": 140,
+        "fn": 7,
+        "support": 261
+      },
+      "structured_source_json": {
+        "precision": 0.883,
+        "recall": 0.8737,
+        "f1": 0.8783,
+        "accuracy": 0.9038,
+        "tp": 83,
+        "fp": 11,
+        "tn": 133,
+        "fn": 12,
+        "support": 239
+      },
+      "structured_source_markdown": {
+        "precision": 0.8434,
+        "recall": 0.8537,
+        "f1": 0.8485,
+        "accuracy": 0.8963,
+        "tp": 70,
+        "fp": 13,
+        "tn": 146,
+        "fn": 12,
+        "support": 241
+      },
+      "structured_source_ocr": {
+        "precision": 0.8739,
+        "recall": 0.8899,
+        "f1": 0.8818,
+        "accuracy": 0.8996,
+        "tp": 97,
+        "fp": 14,
+        "tn": 136,
+        "fn": 12,
+        "support": 259
+      }
+    },
+    "unified": {
+      "conversation": {
+        "precision": 0.6299,
+        "recall": 0.9313,
+        "f1": 0.7515,
+        "accuracy": 0.758,
+        "tp": 366,
+        "fp": 215,
+        "tn": 392,
+        "fn": 27,
+        "support": 1000
+      },
+      "rag_basic": {
+        "precision": 0.4182,
+        "recall": 0.9822,
+        "f1": 0.5866,
+        "accuracy": 0.456,
+        "tp": 386,
+        "fp": 537,
+        "tn": 70,
+        "fn": 7,
+        "support": 1000
+      },
+      "rag_wrapped": {
+        "precision": 0.4166,
+        "recall": 0.9847,
+        "f1": 0.5855,
+        "accuracy": 0.452,
+        "tp": 387,
+        "fp": 542,
+        "tn": 65,
+        "fn": 6,
+        "support": 1000
+      },
+      "structured_source_html": {
+        "precision": 0.4217,
+        "recall": 0.9813,
+        "f1": 0.5899,
+        "accuracy": 0.4406,
+        "tp": 105,
+        "fp": 144,
+        "tn": 10,
+        "fn": 2,
+        "support": 261
+      },
+      "structured_source_json": {
+        "precision": 0.4141,
+        "recall": 0.9895,
+        "f1": 0.5839,
+        "accuracy": 0.4393,
+        "tp": 94,
+        "fp": 133,
+        "tn": 11,
+        "fn": 1,
+        "support": 239
+      },
+      "structured_source_markdown": {
+        "precision": 0.3682,
+        "recall": 0.9878,
+        "f1": 0.5364,
+        "accuracy": 0.4191,
+        "tp": 81,
+        "fp": 139,
+        "tn": 20,
+        "fn": 1,
+        "support": 241
+      },
+      "structured_source_ocr": {
+        "precision": 0.4444,
+        "recall": 0.9908,
+        "f1": 0.6136,
+        "accuracy": 0.4749,
+        "tp": 108,
+        "fp": 135,
+        "tn": 15,
+        "fn": 1,
+        "support": 259
+      }
+    }
+  }
+}

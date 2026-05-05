@@ -1,0 +1,16 @@
+{
+  "best_params": {
+    "instructionality_weight": 0.33847534447247474,
+    "authority_conflict_weight": 0.4676594132583625,
+    "warn_threshold": 0.17421228756600493,
+    "block_threshold": 0.38736363194575013,
+    "strong_signal_multiplier": 1.0867146431658243,
+    "pattern_bonus_single": 0.1427170343077417,
+    "pattern_bonus_multi": 0.2169874832948365,
+    "context_bonus_retrieved": 0.06514575911098752,
+    "context_bonus_history": 0.09952970478875542,
+    "context_bonus_benign": 0.03435690664270973
+  },
+  "best_recall": 0.5092546273136568,
+  "n_trials": 100
+}

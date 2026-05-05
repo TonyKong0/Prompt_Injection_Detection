@@ -1,0 +1,814 @@
+[
+  {
+    "config": "full_pipeline::Full Model",
+    "weights": {
+      "instructionality": 0.3,
+      "authority_conflict": 0.45,
+      "execution_affinity": 0.25
+    },
+    "detector_overrides": {},
+    "decision_threshold": "WARN",
+    "num_samples": 4000,
+    "decision_metrics": {
+      "precision": 0.7674418604651163,
+      "recall": 0.2099236641221374,
+      "f1": 0.32967032967032966,
+      "accuracy": 0.6645
+    },
+    "score_metrics": {
+      "roc_auc": 0.6563316125273003,
+      "pr_auc": 0.5743475656595709
+    },
+    "signal_diagnostics": {
+      "signal_stats": {
+        "instructionality": {
+          "positive_mean": 0.111484,
+          "negative_mean": 0.069384,
+          "delta": 0.0421
+        },
+        "authority_conflict": {
+          "positive_mean": 0.024529,
+          "negative_mean": 0.000659,
+          "delta": 0.02387
+        },
+        "execution_affinity": {
+          "positive_mean": 0.000744,
+          "negative_mean": 0.0,
+          "delta": 0.000744
+        },
+        "density_bonus": {
+          "positive_mean": 0.00869,
+          "negative_mean": 0.000988,
+          "delta": 0.007702
+        },
+        "pattern_bonus": {
+          "positive_mean": 0.005598,
+          "negative_mean": 0.0,
+          "delta": 0.005598
+        },
+        "context_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "position_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        }
+      },
+      "separation_rank": [
+        {
+          "signal": "instructionality",
+          "delta": 0.0421,
+          "abs_delta": 0.0421
+        },
+        {
+          "signal": "authority_conflict",
+          "delta": 0.02387,
+          "abs_delta": 0.02387
+        },
+        {
+          "signal": "density_bonus",
+          "delta": 0.007702,
+          "abs_delta": 0.007702
+        },
+        {
+          "signal": "pattern_bonus",
+          "delta": 0.005598,
+          "abs_delta": 0.005598
+        },
+        {
+          "signal": "execution_affinity",
+          "delta": 0.000744,
+          "abs_delta": 0.000744
+        },
+        {
+          "signal": "context_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "position_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        }
+      ],
+      "top_signal": "instructionality"
+    }
+  },
+  {
+    "config": "full_pipeline::No Authority Conflict",
+    "weights": {
+      "instructionality": 0.6,
+      "authority_conflict": 0.0,
+      "execution_affinity": 0.4
+    },
+    "detector_overrides": {},
+    "decision_threshold": "WARN",
+    "num_samples": 4000,
+    "decision_metrics": {
+      "precision": 0.7674418604651163,
+      "recall": 0.2099236641221374,
+      "f1": 0.32967032967032966,
+      "accuracy": 0.6645
+    },
+    "score_metrics": {
+      "roc_auc": 0.6563316125273003,
+      "pr_auc": 0.5743475656595709
+    },
+    "signal_diagnostics": {
+      "signal_stats": {
+        "instructionality": {
+          "positive_mean": 0.111484,
+          "negative_mean": 0.069384,
+          "delta": 0.0421
+        },
+        "authority_conflict": {
+          "positive_mean": 0.024529,
+          "negative_mean": 0.000659,
+          "delta": 0.02387
+        },
+        "execution_affinity": {
+          "positive_mean": 0.000744,
+          "negative_mean": 0.0,
+          "delta": 0.000744
+        },
+        "density_bonus": {
+          "positive_mean": 0.00869,
+          "negative_mean": 0.000988,
+          "delta": 0.007702
+        },
+        "pattern_bonus": {
+          "positive_mean": 0.005598,
+          "negative_mean": 0.0,
+          "delta": 0.005598
+        },
+        "context_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "position_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        }
+      },
+      "separation_rank": [
+        {
+          "signal": "instructionality",
+          "delta": 0.0421,
+          "abs_delta": 0.0421
+        },
+        {
+          "signal": "authority_conflict",
+          "delta": 0.02387,
+          "abs_delta": 0.02387
+        },
+        {
+          "signal": "density_bonus",
+          "delta": 0.007702,
+          "abs_delta": 0.007702
+        },
+        {
+          "signal": "pattern_bonus",
+          "delta": 0.005598,
+          "abs_delta": 0.005598
+        },
+        {
+          "signal": "execution_affinity",
+          "delta": 0.000744,
+          "abs_delta": 0.000744
+        },
+        {
+          "signal": "context_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "position_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        }
+      ],
+      "top_signal": "instructionality"
+    }
+  },
+  {
+    "config": "full_pipeline::No Instructionality",
+    "weights": {
+      "instructionality": 0.0,
+      "authority_conflict": 0.7,
+      "execution_affinity": 0.3
+    },
+    "detector_overrides": {},
+    "decision_threshold": "WARN",
+    "num_samples": 4000,
+    "decision_metrics": {
+      "precision": 0.7674418604651163,
+      "recall": 0.2099236641221374,
+      "f1": 0.32967032967032966,
+      "accuracy": 0.6645
+    },
+    "score_metrics": {
+      "roc_auc": 0.6563316125273003,
+      "pr_auc": 0.5743475656595709
+    },
+    "signal_diagnostics": {
+      "signal_stats": {
+        "instructionality": {
+          "positive_mean": 0.111484,
+          "negative_mean": 0.069384,
+          "delta": 0.0421
+        },
+        "authority_conflict": {
+          "positive_mean": 0.024529,
+          "negative_mean": 0.000659,
+          "delta": 0.02387
+        },
+        "execution_affinity": {
+          "positive_mean": 0.000744,
+          "negative_mean": 0.0,
+          "delta": 0.000744
+        },
+        "density_bonus": {
+          "positive_mean": 0.00869,
+          "negative_mean": 0.000988,
+          "delta": 0.007702
+        },
+        "pattern_bonus": {
+          "positive_mean": 0.005598,
+          "negative_mean": 0.0,
+          "delta": 0.005598
+        },
+        "context_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "position_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        }
+      },
+      "separation_rank": [
+        {
+          "signal": "instructionality",
+          "delta": 0.0421,
+          "abs_delta": 0.0421
+        },
+        {
+          "signal": "authority_conflict",
+          "delta": 0.02387,
+          "abs_delta": 0.02387
+        },
+        {
+          "signal": "density_bonus",
+          "delta": 0.007702,
+          "abs_delta": 0.007702
+        },
+        {
+          "signal": "pattern_bonus",
+          "delta": 0.005598,
+          "abs_delta": 0.005598
+        },
+        {
+          "signal": "execution_affinity",
+          "delta": 0.000744,
+          "abs_delta": 0.000744
+        },
+        {
+          "signal": "context_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "position_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        }
+      ],
+      "top_signal": "instructionality"
+    }
+  },
+  {
+    "config": "full_pipeline::No Execution Affinity",
+    "weights": {
+      "instructionality": 0.4,
+      "authority_conflict": 0.6,
+      "execution_affinity": 0.0
+    },
+    "detector_overrides": {},
+    "decision_threshold": "WARN",
+    "num_samples": 4000,
+    "decision_metrics": {
+      "precision": 0.7674418604651163,
+      "recall": 0.2099236641221374,
+      "f1": 0.32967032967032966,
+      "accuracy": 0.6645
+    },
+    "score_metrics": {
+      "roc_auc": 0.6563316125273003,
+      "pr_auc": 0.5743475656595709
+    },
+    "signal_diagnostics": {
+      "signal_stats": {
+        "instructionality": {
+          "positive_mean": 0.111484,
+          "negative_mean": 0.069384,
+          "delta": 0.0421
+        },
+        "authority_conflict": {
+          "positive_mean": 0.024529,
+          "negative_mean": 0.000659,
+          "delta": 0.02387
+        },
+        "execution_affinity": {
+          "positive_mean": 0.000744,
+          "negative_mean": 0.0,
+          "delta": 0.000744
+        },
+        "density_bonus": {
+          "positive_mean": 0.00869,
+          "negative_mean": 0.000988,
+          "delta": 0.007702
+        },
+        "pattern_bonus": {
+          "positive_mean": 0.005598,
+          "negative_mean": 0.0,
+          "delta": 0.005598
+        },
+        "context_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "position_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        }
+      },
+      "separation_rank": [
+        {
+          "signal": "instructionality",
+          "delta": 0.0421,
+          "abs_delta": 0.0421
+        },
+        {
+          "signal": "authority_conflict",
+          "delta": 0.02387,
+          "abs_delta": 0.02387
+        },
+        {
+          "signal": "density_bonus",
+          "delta": 0.007702,
+          "abs_delta": 0.007702
+        },
+        {
+          "signal": "pattern_bonus",
+          "delta": 0.005598,
+          "abs_delta": 0.005598
+        },
+        {
+          "signal": "execution_affinity",
+          "delta": 0.000744,
+          "abs_delta": 0.000744
+        },
+        {
+          "signal": "context_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "position_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        }
+      ],
+      "top_signal": "instructionality"
+    }
+  },
+  {
+    "config": "core_signal_only::Full Model",
+    "weights": {
+      "instructionality": 0.3,
+      "authority_conflict": 0.45,
+      "execution_affinity": 0.25
+    },
+    "detector_overrides": {
+      "strong_signal_multiplier": 0.0,
+      "pattern_bonus_single": 0.0,
+      "pattern_bonus_multi": 0.0,
+      "context_bonus_retrieved": 0.0,
+      "context_bonus_history": 0.0,
+      "context_bonus_benign": 0.0
+    },
+    "decision_threshold": "WARN",
+    "num_samples": 4000,
+    "decision_metrics": {
+      "precision": 1.0,
+      "recall": 0.04580152671755725,
+      "f1": 0.0875912408759124,
+      "accuracy": 0.625
+    },
+    "score_metrics": {
+      "roc_auc": 0.67423265884444,
+      "pr_auc": 0.606715908751154
+    },
+    "signal_diagnostics": {
+      "signal_stats": {
+        "instructionality": {
+          "positive_mean": 0.111484,
+          "negative_mean": 0.069384,
+          "delta": 0.0421
+        },
+        "authority_conflict": {
+          "positive_mean": 0.024529,
+          "negative_mean": 0.000659,
+          "delta": 0.02387
+        },
+        "execution_affinity": {
+          "positive_mean": 0.000744,
+          "negative_mean": 0.0,
+          "delta": 0.000744
+        },
+        "density_bonus": {
+          "positive_mean": 0.00869,
+          "negative_mean": 0.000988,
+          "delta": 0.007702
+        },
+        "pattern_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "context_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "position_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        }
+      },
+      "separation_rank": [
+        {
+          "signal": "instructionality",
+          "delta": 0.0421,
+          "abs_delta": 0.0421
+        },
+        {
+          "signal": "authority_conflict",
+          "delta": 0.02387,
+          "abs_delta": 0.02387
+        },
+        {
+          "signal": "density_bonus",
+          "delta": 0.007702,
+          "abs_delta": 0.007702
+        },
+        {
+          "signal": "execution_affinity",
+          "delta": 0.000744,
+          "abs_delta": 0.000744
+        },
+        {
+          "signal": "pattern_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "context_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "position_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        }
+      ],
+      "top_signal": "instructionality"
+    }
+  },
+  {
+    "config": "core_signal_only::No Authority Conflict",
+    "weights": {
+      "instructionality": 0.6,
+      "authority_conflict": 0.0,
+      "execution_affinity": 0.4
+    },
+    "detector_overrides": {
+      "strong_signal_multiplier": 0.0,
+      "pattern_bonus_single": 0.0,
+      "pattern_bonus_multi": 0.0,
+      "context_bonus_retrieved": 0.0,
+      "context_bonus_history": 0.0,
+      "context_bonus_benign": 0.0
+    },
+    "decision_threshold": "WARN",
+    "num_samples": 4000,
+    "decision_metrics": {
+      "precision": 0.7647058823529411,
+      "recall": 0.01653944020356234,
+      "f1": 0.0323785803237858,
+      "accuracy": 0.6115
+    },
+    "score_metrics": {
+      "roc_auc": 0.6574043653139162,
+      "pr_auc": 0.5604159090342236
+    },
+    "signal_diagnostics": {
+      "signal_stats": {
+        "instructionality": {
+          "positive_mean": 0.111484,
+          "negative_mean": 0.069384,
+          "delta": 0.0421
+        },
+        "authority_conflict": {
+          "positive_mean": 0.024529,
+          "negative_mean": 0.000659,
+          "delta": 0.02387
+        },
+        "execution_affinity": {
+          "positive_mean": 0.000744,
+          "negative_mean": 0.0,
+          "delta": 0.000744
+        },
+        "density_bonus": {
+          "positive_mean": 0.00869,
+          "negative_mean": 0.000988,
+          "delta": 0.007702
+        },
+        "pattern_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "context_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "position_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        }
+      },
+      "separation_rank": [
+        {
+          "signal": "instructionality",
+          "delta": 0.0421,
+          "abs_delta": 0.0421
+        },
+        {
+          "signal": "authority_conflict",
+          "delta": 0.02387,
+          "abs_delta": 0.02387
+        },
+        {
+          "signal": "density_bonus",
+          "delta": 0.007702,
+          "abs_delta": 0.007702
+        },
+        {
+          "signal": "execution_affinity",
+          "delta": 0.000744,
+          "abs_delta": 0.000744
+        },
+        {
+          "signal": "pattern_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "context_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "position_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        }
+      ],
+      "top_signal": "instructionality"
+    }
+  },
+  {
+    "config": "core_signal_only::No Instructionality",
+    "weights": {
+      "instructionality": 0.0,
+      "authority_conflict": 0.7,
+      "execution_affinity": 0.3
+    },
+    "detector_overrides": {
+      "strong_signal_multiplier": 0.0,
+      "pattern_bonus_single": 0.0,
+      "pattern_bonus_multi": 0.0,
+      "context_bonus_retrieved": 0.0,
+      "context_bonus_history": 0.0,
+      "context_bonus_benign": 0.0
+    },
+    "decision_threshold": "WARN",
+    "num_samples": 4000,
+    "decision_metrics": {
+      "precision": 0.9523809523809523,
+      "recall": 0.05089058524173028,
+      "f1": 0.09661835748792269,
+      "accuracy": 0.626
+    },
+    "score_metrics": {
+      "roc_auc": 0.6310887137341701,
+      "pr_auc": 0.5464560551246538
+    },
+    "signal_diagnostics": {
+      "signal_stats": {
+        "instructionality": {
+          "positive_mean": 0.111484,
+          "negative_mean": 0.069384,
+          "delta": 0.0421
+        },
+        "authority_conflict": {
+          "positive_mean": 0.024529,
+          "negative_mean": 0.000659,
+          "delta": 0.02387
+        },
+        "execution_affinity": {
+          "positive_mean": 0.000744,
+          "negative_mean": 0.0,
+          "delta": 0.000744
+        },
+        "density_bonus": {
+          "positive_mean": 0.00869,
+          "negative_mean": 0.000988,
+          "delta": 0.007702
+        },
+        "pattern_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "context_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "position_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        }
+      },
+      "separation_rank": [
+        {
+          "signal": "instructionality",
+          "delta": 0.0421,
+          "abs_delta": 0.0421
+        },
+        {
+          "signal": "authority_conflict",
+          "delta": 0.02387,
+          "abs_delta": 0.02387
+        },
+        {
+          "signal": "density_bonus",
+          "delta": 0.007702,
+          "abs_delta": 0.007702
+        },
+        {
+          "signal": "execution_affinity",
+          "delta": 0.000744,
+          "abs_delta": 0.000744
+        },
+        {
+          "signal": "pattern_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "context_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "position_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        }
+      ],
+      "top_signal": "instructionality"
+    }
+  },
+  {
+    "config": "core_signal_only::No Execution Affinity",
+    "weights": {
+      "instructionality": 0.4,
+      "authority_conflict": 0.6,
+      "execution_affinity": 0.0
+    },
+    "detector_overrides": {
+      "strong_signal_multiplier": 0.0,
+      "pattern_bonus_single": 0.0,
+      "pattern_bonus_multi": 0.0,
+      "context_bonus_retrieved": 0.0,
+      "context_bonus_history": 0.0,
+      "context_bonus_benign": 0.0
+    },
+    "decision_threshold": "WARN",
+    "num_samples": 4000,
+    "decision_metrics": {
+      "precision": 0.987012987012987,
+      "recall": 0.04834605597964377,
+      "f1": 0.09217707701637358,
+      "accuracy": 0.62575
+    },
+    "score_metrics": {
+      "roc_auc": 0.6687850553969592,
+      "pr_auc": 0.5959167111925798
+    },
+    "signal_diagnostics": {
+      "signal_stats": {
+        "instructionality": {
+          "positive_mean": 0.111484,
+          "negative_mean": 0.069384,
+          "delta": 0.0421
+        },
+        "authority_conflict": {
+          "positive_mean": 0.024529,
+          "negative_mean": 0.000659,
+          "delta": 0.02387
+        },
+        "execution_affinity": {
+          "positive_mean": 0.000744,
+          "negative_mean": 0.0,
+          "delta": 0.000744
+        },
+        "density_bonus": {
+          "positive_mean": 0.00869,
+          "negative_mean": 0.000988,
+          "delta": 0.007702
+        },
+        "pattern_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "context_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        },
+        "position_bonus": {
+          "positive_mean": 0.0,
+          "negative_mean": 0.0,
+          "delta": 0.0
+        }
+      },
+      "separation_rank": [
+        {
+          "signal": "instructionality",
+          "delta": 0.0421,
+          "abs_delta": 0.0421
+        },
+        {
+          "signal": "authority_conflict",
+          "delta": 0.02387,
+          "abs_delta": 0.02387
+        },
+        {
+          "signal": "density_bonus",
+          "delta": 0.007702,
+          "abs_delta": 0.007702
+        },
+        {
+          "signal": "execution_affinity",
+          "delta": 0.000744,
+          "abs_delta": 0.000744
+        },
+        {
+          "signal": "pattern_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "context_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        },
+        {
+          "signal": "position_bonus",
+          "delta": 0.0,
+          "abs_delta": 0.0
+        }
+      ],
+      "top_signal": "instructionality"
+    }
+  }
+]

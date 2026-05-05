@@ -1,0 +1,11 @@
+model:
+  name: distilbert-base-uncased
+  max_length: 256
+
+training:
+  batch_size: 16
+  epochs: 3
+  learning_rate: 2e-5
+
+experiment:
+  batch_size: 32

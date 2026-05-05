@@ -1,0 +1,42 @@
+[
+  {
+    "model_name": "fastText-style",
+    "accuracy": 0.9616,
+    "precision": 0.9578280542986425,
+    "recall": 0.9722579459856696,
+    "f1": 0.9649890590809628,
+    "train_seconds": 61.86508039999899,
+    "predict_seconds": 0.9534432000000379,
+    "ms_per_sample": 0.09534432000000378,
+    "parameter_count": 2560129,
+    "epochs_ran": 5,
+    "best_val_accuracy": 0.9589999914169312
+  },
+  {
+    "model_name": "TextCNN",
+    "accuracy": 0.9753,
+    "precision": 0.9809329877823029,
+    "recall": 0.9735440014697777,
+    "f1": 0.9772245274319963,
+    "train_seconds": 215.6559269999998,
+    "predict_seconds": 4.385531300000366,
+    "ms_per_sample": 0.4385531300000366,
+    "parameter_count": 2806401,
+    "epochs_ran": 3,
+    "best_val_accuracy": 0.9775999784469604
+  },
+  {
+    "model_name": "DistilBERT",
+    "accuracy": 0.9921,
+    "precision": 0.9921100917431193,
+    "recall": 0.9933860003674444,
+    "f1": 0.9927476360965758,
+    "train_seconds": null,
+    "predict_seconds": null,
+    "ms_per_sample": null,
+    "parameter_count": 66000000,
+    "epochs_ran": 3,
+    "best_val_accuracy": 0.9921,
+    "source_result_file": "D:\\PromptInjectionDetection\\outputs\\results\\dpi\\dpi_experiment_20260323_071356.json"
+  }
+]
