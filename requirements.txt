@@ -18,6 +18,9 @@ matplotlib>=3.7.0
 # Progress bars
 tqdm>=4.65.0
 
+# Terminal visualization (demo_visual.py)
+rich>=13.0.0
+
 # Config
 pyyaml>=6.0
 
