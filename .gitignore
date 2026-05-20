@@ -6,6 +6,9 @@ outputs/logs/
 outputs/results/system/
 outputs/figures/system/
 
+# Generated PR curve variants
+outputs/results/ipi/pr_curve_*_bw.png
+
 # Large datasets (not for distribution)
 data/dpi/
 data/ipi/ipi_train.json
