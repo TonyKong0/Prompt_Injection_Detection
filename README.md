@@ -75,6 +75,36 @@ External Content (retrieved docs / conversation history)
 | JSON-wrapped injection | 0.878 | 90.38% |
 | Markdown-wrapped injection | 0.849 | 89.63% |
 
+### System-Level Ablation Study
+
+Evaluates end-to-end detection performance across 6 system configurations on a combined benchmark of **10,000 DPI + 4,000 IPI** samples (14,000 total). Each configuration represents a different deployment strategy, from single-component to fully unified pipeline.
+
+**Performance comparison (14,000-sample joint benchmark):**
+
+| Config | Accuracy | Precision | Recall | F1 | Direct Recall | Indirect Recall |
+|---|---|---|---|---|---|---|
+| DPI-only | 83.21% | 77.40% | 93.93% | 0.849 | 99.34% | 75.19% |
+| IPI warning-only | 58.54% | 60.19% | 50.99% | 0.552 | 42.94% | 78.88% |
+| IPI BERT-only | 74.28% | 72.18% | 79.19% | 0.755 | 76.01% | 90.20% |
+| DPI + IPI warning | 76.16% | 68.13% | 98.49% | 0.805 | 99.39% | 95.36% |
+| DPI + IPI BERT | 72.04% | 64.33% | 99.17% | 0.780 | 99.65% | 97.52% |
+| **Unified (all three)** | 66.39% | 59.90% | **99.62%** | 0.748 | 99.67% | **99.43%** |
+
+**Key findings:**
+- **DPI-only excels at direct attacks** (99.34% recall) but misses ~25% of indirect injections.
+- **IPI warning provides fast early alerts** (~2.5 ms) with 78.88% indirect recall — suitable for time-sensitive filtering.
+- **IPI BERT adds precision** (90.20% indirect recall) at higher latency (~21 ms).
+- **Unified pipeline (DPI + IPI warning + IPI BERT) achieves 99.62% overall recall** and 99.43% indirect recall — the highest coverage, while allowing early warning at 2.5 ms and final BERT validation at 23 ms.
+
+**Latency comparison (IPI attack samples, ms):**
+
+| Config | Scope | Mean | Median | P95 |
+|---|---|---|---|---|
+| DPI + IPI warning | final decision | 2.55 | 2.22 | 5.50 |
+| DPI + IPI BERT | final decision | 21.37 | 21.04 | 30.95 |
+| Unified (all three) | early warning | 2.55 | 2.22 | 5.50 |
+| Unified (all three) | final decision | 23.37 | 22.62 | 34.78 |
+
 ## Repository Structure
 
 ```
@@ -110,7 +140,12 @@ PromptInjectionDetection/
 │   ├── run_ipi_experiment.py    # IPI Bayesian optimization
 │   ├── run_ipi_ablation.py      # Ablation study
 │   ├── run_ipi_experiment_bert.py # BERT IPI evaluation
-│   └── run_unified_experiment.py  # Full pipeline benchmark
+│   ├── run_unified_experiment.py  # Full pipeline benchmark
+│   ├── run_system_ablation.py   # System-level ablation core
+│   ├── execute_system_ablation.py # System ablation CLI (dry-run / full)
+│   ├── plot_chapter6_figures.py # Chapter 6 figure generation
+│   ├── replot_system_ablation.py # System ablation figure replot
+│   └── context_utils.py         # Context parsing utilities
 └── data/
     └── examples/                # Sample data (see Data section)
 ```
@@ -165,6 +200,12 @@ python experiments/run_ipi_ablation.py
 
 # Full pipeline benchmark
 python experiments/run_unified_experiment.py
+
+# System-level ablation (dry run first)
+python experiments/execute_system_ablation.py --dry-run
+
+# System-level ablation (full experiment)
+python experiments/execute_system_ablation.py
 ```
 
 Results are saved as JSON to `outputs/results/`.
