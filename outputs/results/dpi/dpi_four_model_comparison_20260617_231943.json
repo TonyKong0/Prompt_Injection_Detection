@@ -1,0 +1,60 @@
+[
+  {
+    "model_name": "fastText-style",
+    "accuracy": 0.9616,
+    "precision": 0.9578280542986425,
+    "recall": 0.9722579459856696,
+    "f1": 0.9649890590809628,
+    "train_seconds": 61.86508039999899,
+    "predict_seconds": 0.9534432000000379,
+    "ms_per_sample": 0.09534432000000378,
+    "parameter_count": 2560129,
+    "epochs_ran": 5,
+    "best_val_accuracy": 0.9589999914169312,
+    "source_result_file": "D:\\PromptInjectionDetection\\outputs\\results\\dpi\\dpi_baseline_comparison_20260402_231547.json"
+  },
+  {
+    "model_name": "TextCNN",
+    "accuracy": 0.9753,
+    "precision": 0.9809329877823029,
+    "recall": 0.9735440014697777,
+    "f1": 0.9772245274319963,
+    "train_seconds": 215.6559269999998,
+    "predict_seconds": 4.385531300000366,
+    "ms_per_sample": 0.4385531300000366,
+    "parameter_count": 2806401,
+    "epochs_ran": 3,
+    "best_val_accuracy": 0.9775999784469604,
+    "source_result_file": "D:\\PromptInjectionDetection\\outputs\\results\\dpi\\dpi_baseline_comparison_20260402_231547.json"
+  },
+  {
+    "model_name": "DistilBERT",
+    "accuracy": 0.9921,
+    "precision": 0.9921100917431193,
+    "recall": 0.9933860003674444,
+    "f1": 0.9927476360965758,
+    "train_seconds": null,
+    "predict_seconds": 42.1647873,
+    "ms_per_sample": 4.2164787299999995,
+    "parameter_count": 66955010,
+    "sample_count": 10000,
+    "device": "cuda",
+    "batch_size": 32,
+    "source_result_file": "D:\\PromptInjectionDetection\\outputs\\results\\dpi\\distilbert-base-uncased_inference_timing_20260617_231806.json"
+  },
+  {
+    "model_name": "BERT",
+    "accuracy": 0.9922,
+    "precision": 0.991030569284276,
+    "recall": 0.9946720558515525,
+    "f1": 0.9928479735925179,
+    "train_seconds": null,
+    "predict_seconds": 88.1969639,
+    "ms_per_sample": 8.819696389999999,
+    "parameter_count": 109483778,
+    "sample_count": 10000,
+    "device": "cuda",
+    "batch_size": 32,
+    "source_result_file": "D:\\PromptInjectionDetection\\outputs\\results\\dpi\\bert-base-uncased_inference_timing_20260617_225912.json"
+  }
+]

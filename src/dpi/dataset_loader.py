@@ -1,7 +1,7 @@
 # src/dpi/dataset_loader.py
 
 from datasets import load_dataset
-from transformers import DistilBertTokenizer
+from transformers import AutoTokenizer
 
 
 def load_dpi_dataset(data_dir):
@@ -31,7 +31,7 @@ def convert_labels(example):
 
 def tokenize_dataset(dataset, model_name="distilbert-base-uncased", max_length=256):
 
-    tokenizer = DistilBertTokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     def tokenize(example):
         return tokenizer(

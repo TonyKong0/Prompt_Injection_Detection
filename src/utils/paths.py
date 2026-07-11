@@ -14,6 +14,7 @@ DPI_DATA_DIR = DATA_DIR / "dpi"
 IPI_DATA_DIR = DATA_DIR / "ipi"
 
 DPI_MODEL_DIR = MODEL_DIR / "dpi_detector"
+DPI_BERT_MODEL_DIR = MODEL_DIR / "dpi_detector_bert"
 
 RESULTS_DPI_DIR = RESULTS_DIR / "dpi"
 RESULTS_IPI_DIR = RESULTS_DIR / "ipi"

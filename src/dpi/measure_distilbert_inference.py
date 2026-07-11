@@ -1,19 +1,21 @@
+import argparse
 import json
 import sys
 import time
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 import pandas as pd
 import torch
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-from transformers import DistilBertForSequenceClassification, DistilBertTokenizer
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.utils.paths import DPI_MODEL_DIR, RESULTS_DPI_DIR, dpi_parquet_path, ensure_dir
+from src.utils.paths import DPI_MODEL_DIR, DPI_BERT_MODEL_DIR, MODEL_DIR, RESULTS_DPI_DIR, dpi_parquet_path, ensure_dir
 
 
 def load_test_data() -> tuple[list[str], list[int]]:
@@ -23,18 +25,41 @@ def load_test_data() -> tuple[list[str], list[int]]:
     return frame["text"].tolist(), frame["label"].tolist()
 
 
+def get_model_dir(model_name: str, model_dir: Optional[str]) -> Path:
+    if model_dir:
+        return Path(model_dir)
+    if model_name == "distilbert-base-uncased":
+        return DPI_MODEL_DIR
+    if model_name == "bert-base-uncased":
+        return DPI_BERT_MODEL_DIR
+    safe_name = model_name.replace("/", "_")
+    return MODEL_DIR / f"dpi_detector_{safe_name}"
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model-name", default="distilbert-base-uncased",
+                        help="HuggingFace model name (default: distilbert-base-uncased)")
+    parser.add_argument("--model-dir", default=None,
+                        help="Path to trained model directory (default: auto-derived)")
+    parser.add_argument("--batch-size", type=int, default=32,
+                        help="Inference batch size (default: 32)")
+    args = parser.parse_args()
+
     ensure_dir(RESULTS_DPI_DIR)
 
     texts, labels = load_test_data()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    tokenizer = DistilBertTokenizer.from_pretrained(str(DPI_MODEL_DIR))
-    model = DistilBertForSequenceClassification.from_pretrained(str(DPI_MODEL_DIR))
+    model_dir = get_model_dir(args.model_name, args.model_dir)
+    display_name = "DistilBERT" if "distilbert" in args.model_name else args.model_name
+
+    tokenizer = AutoTokenizer.from_pretrained(str(model_dir))
+    model = AutoModelForSequenceClassification.from_pretrained(str(model_dir))
     model.to(device)
     model.eval()
 
-    batch_size = 32
+    batch_size = args.batch_size
     predictions = []
     confidences = []
 
@@ -76,7 +101,7 @@ def main() -> None:
     accuracy = accuracy_score(labels, predictions)
 
     result = {
-        "model_name": "DistilBERT",
+        "model_name": display_name,
         "device": str(device),
         "batch_size": batch_size,
         "accuracy": float(accuracy),
@@ -91,7 +116,8 @@ def main() -> None:
     }
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = RESULTS_DPI_DIR / f"distilbert_inference_timing_{timestamp}.json"
+    safe_name = args.model_name.replace("/", "_")
+    output_path = RESULTS_DPI_DIR / f"{safe_name}_inference_timing_{timestamp}.json"
     with output_path.open("w", encoding="utf-8") as handle:
         json.dump(result, handle, ensure_ascii=False, indent=2)
 

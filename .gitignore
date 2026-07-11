@@ -39,6 +39,10 @@ env/
 .idea/
 .vscode/
 *.iml
+.deepseek/
+
+# Portable Python runtime
+Python/
 
 # OS
 .DS_Store

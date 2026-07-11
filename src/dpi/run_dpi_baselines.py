@@ -167,29 +167,45 @@ def evaluate_model(
     }
 
 
-def load_distilbert_result() -> dict:
-    result_candidates = sorted(RESULTS_DPI_DIR.glob("dpi_experiment_*.json"))
+def _load_hf_result(
+    model_display_name: str,
+    param_count_fallback: int,
+    epochs_ran_fallback: int,
+    glob_pattern: str,
+) -> dict:
+    result_candidates = sorted(RESULTS_DPI_DIR.glob(glob_pattern))
     if not result_candidates:
-        raise FileNotFoundError("No DistilBERT DPI result json found in outputs/results/dpi.")
+        raise FileNotFoundError(
+            f"No {model_display_name} result json found matching '{glob_pattern}' "
+            f"in {RESULTS_DPI_DIR}."
+        )
 
     latest_result = result_candidates[-1]
     with latest_result.open("r", encoding="utf-8") as handle:
         metrics = json.load(handle)
 
     return {
-        "model_name": "DistilBERT",
+        "model_name": model_display_name,
         "accuracy": float(metrics["accuracy"]),
         "precision": float(metrics["attack"]["precision"]),
         "recall": float(metrics["attack"]["recall"]),
         "f1": float(metrics["attack"]["f1-score"]),
         "train_seconds": None,
-        "predict_seconds": None,
-        "ms_per_sample": None,
-        "parameter_count": 66_000_000,
-        "epochs_ran": 3,
+        "predict_seconds": metrics.get("predict_seconds"),
+        "ms_per_sample": metrics.get("ms_per_sample"),
+        "parameter_count": metrics.get("parameter_count", param_count_fallback),
+        "epochs_ran": metrics.get("epochs_ran", epochs_ran_fallback),
         "best_val_accuracy": float(metrics["accuracy"]),
         "source_result_file": str(latest_result),
     }
+
+
+def load_distilbert_result() -> dict:
+    return _load_hf_result("DistilBERT", 66_000_000, 3, "dpi_experiment_*.json")
+
+
+def load_bert_result() -> dict:
+    return _load_hf_result("BERT", 110_000_000, 3, "dpi_experiment_bert_*.json")
 
 
 def save_comparison_chart(results: list[dict], output_path: Path) -> None:
@@ -289,8 +305,9 @@ def main() -> None:
         test_labels,
     )
     distilbert_result = load_distilbert_result()
+    bert_result = load_bert_result()
 
-    all_results = [fasttext_result, textcnn_result, distilbert_result]
+    all_results = [fasttext_result, textcnn_result, distilbert_result, bert_result]
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     result_json_path = RESULTS_DPI_DIR / f"dpi_baseline_comparison_{timestamp}.json"

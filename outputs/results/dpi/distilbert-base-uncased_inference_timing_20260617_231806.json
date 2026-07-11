@@ -1,0 +1,14 @@
+{
+  "model_name": "DistilBERT",
+  "device": "cuda",
+  "batch_size": 32,
+  "accuracy": 0.9921,
+  "precision": 0.9921100917431193,
+  "recall": 0.9933860003674444,
+  "f1": 0.9927476360965758,
+  "predict_seconds": 42.1647873,
+  "ms_per_sample": 4.2164787299999995,
+  "parameter_count": 66955010,
+  "sample_count": 10000,
+  "average_confidence": 0.9975071359038353
+}

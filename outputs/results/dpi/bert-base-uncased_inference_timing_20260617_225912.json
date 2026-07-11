@@ -1,0 +1,14 @@
+{
+  "model_name": "bert-base-uncased",
+  "device": "cuda",
+  "batch_size": 32,
+  "accuracy": 0.9922,
+  "precision": 0.991030569284276,
+  "recall": 0.9946720558515525,
+  "f1": 0.9928479735925179,
+  "predict_seconds": 88.1969639,
+  "ms_per_sample": 8.819696389999999,
+  "parameter_count": 109483778,
+  "sample_count": 10000,
+  "average_confidence": 0.9985006843447686
+}
