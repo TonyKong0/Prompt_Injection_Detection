@@ -21,7 +21,8 @@ A DistilBERT-based binary classifier fine-tuned on a labeled prompt injection da
 |---|---|---|---|
 | fastText-style | 96.16% | 0.965 | 0.095 ms/sample |
 | TextCNN | 97.53% | 0.977 | 0.439 ms/sample |
-| **DistilBERT (ours)** | **99.21%** | **0.993** | 5.18 ms/sample |
+| **DistilBERT (ours)** | **99.21%** | **0.993** | 4.22 ms/sample |
+| BERT-base | 99.22% | 0.993 | 8.82 ms/sample |
 
 ### IPI Detection — Core Contribution
 
@@ -191,6 +192,12 @@ Models are saved to `outputs/model/`.
 ```bash
 # Evaluate DPI detector and compare baselines
 python experiments/run_dpi_experiment.py
+
+# Evaluate BERT-base DPI detector
+python experiments/run_dpi_experiment_bert.py
+
+# Plot four-model DPI comparison (fastText, TextCNN, DistilBERT, BERT)
+python src/dpi/plot_dpi_four_model_comparison.py
 
 # Run IPI Bayesian hyperparameter optimization
 python experiments/run_ipi_experiment.py
